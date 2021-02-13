@@ -1,0 +1,21 @@
+//Calculo Ecuacion Segundo Grado
+package ej1_5;
+import java.util.Scanner;
+public class EJ1_5 {
+	public static void main(String[] args) {
+		int a,b,c,x;
+		double y;
+		Scanner Teclado = new Scanner(System.in);
+		System.out.print("Introuduce el valor de A: ");
+		a = Teclado.nextInt();
+		System.out.print("Introuduce el valor de B: ");
+		b = Teclado.nextInt();
+		System.out.print("Introuduce el valor de C: ");
+		c = Teclado.nextInt();
+		System.out.print("Introuduce el valor de X: ");
+		x = Teclado.nextInt();
+		y= (a*(Math.pow(x, 2))+(b*x)+c);
+		System.out.print("Valor de Y: " + y);
+		
+	}
+}

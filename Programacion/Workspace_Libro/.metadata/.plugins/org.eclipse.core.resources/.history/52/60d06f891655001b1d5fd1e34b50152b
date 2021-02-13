@@ -1,0 +1,26 @@
+package ej1_6;
+import java.util.Scanner;
+public class EJ1_6 {
+	public static void main(String[] args) {
+		double segundos, minutos, horas;
+		Scanner Teclado = new Scanner(System.in);
+		System.out.print("Introduce los Segundos: ");
+		segundos = Teclado.nextInt();
+		//Calculo de horas
+		horas = segundos / 3600;
+		System.out.print(horas);
+		segundos -= 3600 * horas;
+		//Calculo de minutos
+		minutos = segundos % 60;
+		segundos -= minutos * 60;
+		//Salida
+		System.out.print("\nHoras: " + (int)horas);
+		System.out.print("\nMinutos: " + (int)minutos);
+		System.out.print("\nSegundos: " + (int)segundos);
+		Teclado.close();
+		
+		
+
+	}
+
+}

@@ -1,0 +1,18 @@
+package ej1_5;
+import java.util.Scanner;
+public class EJ1_5 {
+	public static void main(String[] args) {
+		int a,b,c,x;
+		float y;
+		Scanner Teclado = new Scanner(System.in);
+		System.out.print("Introuduce el valor de A: ");
+		a = Teclado.nextInt();
+		System.out.print("Introuduce el valor de B: ");
+		b = Teclado.nextInt();
+		System.out.print("Introuduce el valor de C: ");
+		c = Teclado.nextInt();
+		System.out.print("Introuduce el valor de X: ");
+		a = Teclado.nextInt();
+		
+	}
+}

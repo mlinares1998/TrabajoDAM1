@@ -1,0 +1,4 @@
+INDEX VERSION 1.131+/run/media/mlinares/2854F1ED54F1BD9E/Users/mlina/Documents/FP/DAM/Programación/Workspace_Libro/.metadata/.plugins/org.eclipse.jdt.core
+1754270079.index
+1841001279.index
+4105314949.index

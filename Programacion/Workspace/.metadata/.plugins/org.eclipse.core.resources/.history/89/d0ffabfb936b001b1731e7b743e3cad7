@@ -1,0 +1,47 @@
+package caracterACaracter;
+import java.util.Scanner;
+public class CaracterACaracter {
+	public static void main(String[] args) {
+		Scanner teclado = new Scanner(System.in);
+		String cad_1 = "";
+		String cad_2=""; 
+		String caracter = null;
+		boolean repeticiones = false;
+		//Introducimos un caracter y lo validamos
+		do {
+			do {
+				System.out.print("Introduce un Caracter (Escribe '.' para finalizar): ");
+				caracter = teclado.nextLine().toUpperCase();
+				//Verificamos si es una letra y si la longitud es diferente de 1.
+				if((caracter.isBlank() || caracter.length() != 1) || (!Character.isLetter(caracter.charAt(0)) && !caracter.equals("."))) {
+					System.out.println("Valor Inválido... Introduce solo un carácter...");
+				}
+			}while((caracter.isBlank() || caracter.length() != 1) || (!Character.isLetter(caracter.charAt(0)) && !caracter.equals(".")));
+			if(caracter.equals(".") && cad_1.isEmpty()) {
+				System.out.println("ERROR: Cadena Vacia"); 
+				continue;
+			}
+			else if(caracter.equals(".")) break;
+			else {
+			cad_1 = cad_1.concat(caracter);
+			System.out.println(cad_1);
+			}
+			if(cad_1.isEmpty()) System.out.println("ERROR: Cadena Vacia");
+		}while(!caracter.equals(".") && cad_1.isEmpty());
+		do {
+		System.out.println("Introduce una cadena de longitud" + cad_1.length() + ":");
+		cad_2 = teclado.nextLine().toUpperCase();
+		if(cad_2.length() != cad_1.length()) System.out.println("Longitud Inválida...");
+		}while(cad_2.length() != cad_1.length());
+		
+		System.out.println("REPETICIONES");
+		System.out.println("Posicion | Caracter");
+		for(int i = 0; i < cad_1.length(); i++) {
+			if(cad_1.charAt(i) == cad_2.charAt(i)) {
+				repeticiones = true;
+				System.out.println(i + "            " + cad_1.charAt(i));
+			}
+		}
+		if(!repeticiones) System.out.println("No hay repeticiones....");
+	}
+}

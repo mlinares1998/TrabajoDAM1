@@ -1,0 +1,19 @@
+package contadorCaracteres;
+import java.util.Scanner;
+public class contadorCaracteres {
+	
+	public static int contCaracter(int modo, String frase) {
+		
+	}
+	
+	public static void main(String[] args) {
+	Scanner teclado = new Scanner(System.in);
+	String frase = null;
+	System.out.println("Introduce una frase:");
+	frase = teclado.nextLine();
+	
+	
+
+	}
+
+}

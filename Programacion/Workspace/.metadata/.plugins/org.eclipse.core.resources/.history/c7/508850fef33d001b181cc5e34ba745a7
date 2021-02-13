@@ -1,0 +1,49 @@
+package matriz3D;
+import java.util.Scanner;
+public class Matriz3D {
+
+	public static void main(String[] args) {
+		//Declaramos las variables
+		int ialumn = 0, iasig = 0, ieval = 0;
+		float media = 0;
+		//M = new int[6][4][3];
+		Scanner Teclado = new Scanner(System.in);
+		//Parte I: Insertar datos en la Matriz
+		//Matriz Predefinida
+		int M[][][] = { { {9,8,5},{4,5,6} } };
+		/*
+		for(ieval = 0; ieval < 3; ieval++) {
+			for(ialumn = 0; ialumM = new int[6][4][3];n < 6; ialumn++) {
+				for(iasig = 0; iasig < 4; iasig++) {
+					do {
+					System.out.print("Introduce la nota del Alumno " + (ialumn + 1)
+								    + " Asignatura " + (iasig+1) + " Evaluacion " 
+								    + (ieval+1) + ":");
+					M[ialumn][iasig][ieval] = Teclado.nextInt();
+					if(M[ialumn][iasig][ieval] < 1 || M[ialumn][iasig][ieval] > 10) System.out.println("Valor Fuera de Rango");  
+					}while(M[ialumn][iasig][ieval] < 1 || M[ialumn][iasig][ieval] > 10);
+				}
+			}
+		}
+		*/
+		//Parte II: Mostrar datos en la Matriz
+		for(ieval = 0; ieval < 3; ieval++) {
+			for(ialumn = 0; ialumn < 6; ialumn++) {
+				for(iasig = 0; iasig < 4; iasig++) {
+					System.out.println("Nota Alumno " + ialumn + " Asignatura " + iasig
+									  + " Evaluacion " + ieval + ": " + M[ialumn][iasig][ieval]);
+				}
+			}
+		}
+		//Parte III Calculo Media Global
+		for(ieval = 0; ieval < 3; ieval++) {
+			for(ialumn = 0; ialumn < 6; ialumn++) {
+				for(iasig = 0; iasig < 4; iasig++) {
+					media +=  M[ialumn][iasig][ieval];
+				}
+			System.out.println("Media Alumno " + ialumn + ":" + (media/12));
+			media = 0;
+			}
+		}
+	}
+}

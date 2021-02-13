@@ -1,0 +1,63 @@
+package contadorCaracteres;
+import java.util.InputMismatchException;
+import java.util.Scanner;
+public class contadorCaracteres {
+	
+	public static int contCaracter(int modo, String frase) {
+		int contador = 0;
+		char frasearray[] = frase.toCharArray();
+		switch(modo) {
+		case 1:
+			for(int i = 0; i < frasearray.length; i++) {
+				if(Character.isDigit(frasearray[i])) contador++;
+			}
+			break;
+		case 2:
+			for(int i = 0; i < frasearray.length; i++) {
+				if(Character.isLetter(frasearray[i])) contador++;
+			}
+			break;
+		case 3:
+			for(int i = 0; i < frasearray.length; i++) {
+				if(!Character.isLetterOrDigit(frasearray[i])) contador++;
+			}
+			break;
+		}
+		return contador;
+	}
+	
+	public static void main(String[] args) {
+	Scanner teclado = new Scanner(System.in);
+	String frase = null;
+	int opcion;
+	System.out.println("Introduce una frase (Escribe FIN para salir):");
+	frase = teclado.nextLine();
+	do{
+		if(frase.equalsIgnoreCase("fin")) break;
+		do {
+			System.out.println("Selecciona un modo:");
+			System.out.println("1) Contar Números");
+			System.out.println("2) Contar Carácteres");
+			System.out.println("3) Contar Carácteres Especiales");
+			try {
+			opcion = teclado.nextInt();
+			}catch(InputMismatchException ime) {opcion = 4;}
+			if(opcion < 1 || opcion > 4) System.out.println("Opción Inválida... Introduce un valor válido");
+		}while(opcion <1 || opcion > 3);
+		
+		switch(opcion) {
+			case 1:
+				System.out.println("El número de letras es:" + String.valueOf(contCaracter(opcion,frase)));
+				break;
+			case 2:
+				System.out.println("El número de carácteres  es:" + String.valueOf(contCaracter(opcion,frase)));
+				break;
+			case 3:
+				System.out.println("El número de carácteres especiales es:" + String.valueOf(contCaracter(opcion,frase)));
+			}
+		}
+	while(frase.equalsIgnoreCase("fin"));
+	teclado.close();
+	System.out.println("Fin de Programa");
+	}
+}

@@ -1,0 +1,11 @@
+package caracterACaracter;
+import java.util.Scanner;
+public class CaracterACaracter {
+	public static void main(String[] args) {
+	String cadena = "hola";
+	String caracter = "adios";
+	cadena.concat(caracter);
+	System.out.println(cadena);
+			
+	}
+}

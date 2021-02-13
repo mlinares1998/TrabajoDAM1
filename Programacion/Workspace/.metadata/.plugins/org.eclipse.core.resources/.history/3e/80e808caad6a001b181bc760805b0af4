@@ -1,0 +1,44 @@
+package contadorCaracteres;
+import java.util.InputMismatchException;
+import java.util.Scanner;
+public class contadorCaracteres {
+	
+	public static int contCaracter(int modo, String frase) {
+		
+	}
+	
+	public static void main(String[] args) {
+	Scanner teclado = new Scanner(System.in);
+	String frase = null;
+	int opcion;
+	System.out.println("Introduce una frase:");
+	frase = teclado.nextLine();
+	do {
+		System.out.println("Selecciona un modo:");
+		System.out.println("1) Contar Letras");
+		System.out.println("2) Contar Carácteres");
+		System.out.println("3) Contar Carácteres Especiales");
+		try {
+		opcion = teclado.nextInt();
+		}catch(InputMismatchException ime) {opcion = 4;}
+		if(opcion < 1 || opcion > 4) System.out.println("Opción Inválida... Introduce un valor válido");
+	}while(opcion <1 || opcion > 3);
+	
+	switch(opcion) {
+	case 1:
+		System.out.println("El número de letas es:" + String.valueOf(contCaracter(opcion,frase)));
+		break;
+	case 2:
+		contCaracter(2,frase);
+		break;
+	case 3:
+		contCaracter()
+	}
+	
+	
+	teclado.close();
+	
+
+	}
+
+}

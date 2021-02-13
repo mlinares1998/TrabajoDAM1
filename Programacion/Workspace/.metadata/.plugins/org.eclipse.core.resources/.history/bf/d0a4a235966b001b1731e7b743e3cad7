@@ -1,0 +1,70 @@
+package caracterACaracter;
+import java.util.Scanner;
+public class CaracterACaracter {
+	
+	static boolean validarCaracter(String caracter) {
+		if((caracter.isBlank() || caracter.length() != 1) || (!Character.isLetter(caracter.charAt(0)) && !caracter.equals("."))) return false;
+		else return true;
+	}
+	
+	static void printRepeticiones(String cad_1, String cad_2) {
+		boolean repeticiones = false;
+		System.out.println("REPETICIONES");
+		System.out.println("Posicion | Caracter");
+		for(int i = 0; i < cad_1.length(); i++) {
+			if(cad_1.charAt(i) == cad_2.charAt(i)) {
+				repeticiones = true;
+				System.out.println((i+1) + " \t\t" + cad_1.charAt(i));
+			}
+		}
+		if(!repeticiones) System.out.println("No hay repeticiones....");
+	}
+	
+	static boolean soloLetras(String cadena) {
+		boolean sololetras = true;
+		for(int i = 0; i < cadena.length(); i++) {
+			if(!Character.isLetter(cadena.charAt(i))) sololetras = false;
+		}
+		return sololetras;
+	}
+	
+	public static void main(String[] args) {
+		Scanner teclado = new Scanner(System.in);
+		String cad_1 = "";
+		String cad_2= ""; 
+		String caracter = null;
+		//Introducimos un caracter y lo validamos
+		do {
+			do {
+				System.out.print("Introduce un Caracter (Escribe '.' para finalizar): ");
+				caracter = teclado.nextLine().toUpperCase();
+				//Verificamos si es una letra y si la longitud es diferente de 1.
+				if(!validarCaracter(caracter)) {
+					System.out.println("Valor Inválido... Introduce solo un carácter...");
+				}
+			}while(!validarCaracter(caracter));
+			
+			//Si la cadena esta vacia (Pulsar "." al comenzar)
+			if(caracter.equals(".") && cad_1.isEmpty()) {
+				System.out.println("ERROR: Cadena Vacia"); 
+				continue;
+			}
+			//Si se introduce un "." salimos del while
+			else if(caracter.equals(".")) break;
+			//Sino Acumulamos los caracteres en el String
+			else {
+			cad_1 = cad_1.concat(caracter);
+			System.out.println(cad_1);
+			}
+		}while(!caracter.equals(".") || cad_1.isEmpty());
+		
+		//Introducimos una cadena de longitud igual a cad_1
+		do {
+		System.out.println("Introduce una cadena de longitud" + cad_1.length() + ":");
+		cad_2 = teclado.nextLine().toUpperCase();
+		if(cad_2.length() != cad_1.length() || !soloLetras(cad_2)) System.out.println("Longitud o Cadena Inválida...");
+		}while(cad_2.length() != cad_1.length() ||!soloLetras(cad_2));
+		
+		printRepeticiones(cad_1,cad_2);
+	}
+}

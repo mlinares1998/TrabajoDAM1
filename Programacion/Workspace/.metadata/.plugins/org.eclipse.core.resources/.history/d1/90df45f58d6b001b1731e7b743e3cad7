@@ -1,0 +1,25 @@
+package caracterACaracter;
+import java.util.Scanner;
+public class CaracterACaracter {
+	public static void main(String[] args) {
+		Scanner teclado = new Scanner(System.in);
+		String cadena = "";
+		String caracter = null;
+		do {
+			do {
+				System.out.println("Introduce un Caracter (Escribe '.' para finalizar");
+				caracter = teclado.nextLine().toUpperCase();
+				if((caracter.length() != 1 || !Character.isLetter(caracter.charAt(0))) && !caracter.equals(".")) {
+					System.out.println("Valor Inválido... Introduce solo un carácter...");
+				}
+				cadena.concat(caracter);
+				System.out.println(cadena);
+			}while(caracter.length() != 0 && Character.isLetter(caracter.charAt(0)) || !caracter.equals("."));
+			if(caracter.equals(".")) break;
+			else {
+			}
+		}while(!caracter.equals("."));
+		System.out.println(cadena);
+	}
+
+}
